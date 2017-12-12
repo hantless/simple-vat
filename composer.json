@@ -1,0 +1,19 @@
+{
+    "name": "hantless/simple-vat",
+    "description": "Simple package to check European's VAT number format",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Frédéric Arijs",
+            "email": "hantless@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+              "Hantless\\SimpleVat\\SimplevatServiceProvider"
+            ]
+        }
+    }
+}
