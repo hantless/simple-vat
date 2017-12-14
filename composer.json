@@ -1,6 +1,7 @@
 {
     "name": "hantless/simple-vat",
     "description": "Simple package to check European's VAT number format",
+    "keywords": ["laravel", "check", "vat", "format"],
     "license": "MIT",
     "authors": [
         {
@@ -8,7 +9,9 @@
             "email": "hantless@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+      "illuminate/support": "~5"
+    },
     "require-dev": {
         "orchestra/testbench": "*",
         "phpunit/phpunit": "^4.0|^5.0"
