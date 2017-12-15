@@ -8,7 +8,7 @@ removing the SOAP call for existence.
 
 ## Installation
 
-Simply requite the project using [Composer](https://getcomposer.org):
+Simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require hantless/simple-vat
@@ -64,7 +64,7 @@ Add the error message in your translation files (resources/lang/{lang}/validatio
 
 ```php
 
-'vat_number' => 'The :attribute do not seem to be a valid VAT number',
+'vat_format' => 'The :attribute do not seem to be a valid VAT number',
 
 ```
 
