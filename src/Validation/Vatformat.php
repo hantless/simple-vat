@@ -57,7 +57,34 @@ class Vatformat
             return false;
         }
 
-        return preg_match( '/^' . self::$patterns[$country] . '$/', $number ) > 0;
+        $result = preg_match( '/^' . self::$patterns[$country] . '$/', $number ) > 0;
 
+        $methodCall = 'checksum' . $country;
+        if (method_exists($this, $methodCall)) {
+
+            return $this->$methodCall($number);
+        }
+
+        return $result;
     }
+
+    /**
+     * Check modulo of number for Belgian VAT number
+     * @param $number
+     * @return bool
+     */
+    protected function checksumBE($number)
+    {
+        $result = substr($number, -2);
+        $num = substr($number, 1, 7);
+
+        $modulo = $num % 97;
+
+        if ($modulo == 0) {
+            return $result == 97;
+        }
+
+        return $result == (97 - $modulo);
+    }
+
 }
