@@ -47,10 +47,21 @@ class SimplevatValidatorTest extends BaseTestCase
     }
 
     /**
-     * @param \Illuminate\Foundation\Application $app
-     * @return array
+     * @test
      */
-    protected function getPackageProviders($app)
+    public function it_validates_correct_BE_checksum()
+    {
+        $this->assertTrue($this->validator->make(
+            ['field' => 'BE0842956229'],
+            ['field' => 'vat_format']
+        )->passes());
+    }
+
+    /**
+     * @return array
+     * @internal param \Illuminate\Foundation\Application $app
+     */
+    protected function getPackageProviders()
     {
         return [SimplevatServiceProvider::class];
     }
